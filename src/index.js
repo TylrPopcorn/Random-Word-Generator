@@ -20,9 +20,16 @@ import App from "./Components/App";
 
 */
 //.
+
+//vars:
+const TITLE = "WORD GENERATOR"; /* Change the title to whatever */
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <h1 className="title" data-text={TITLE}>
+      {TITLE}
+    </h1>
     <App />
   </React.StrictMode>
 );
