@@ -1,5 +1,5 @@
 //imports:
-import React from "react";
+import React, { useState } from "react";
 
 //styles:
 // import '../../styles/styles.css';
@@ -10,13 +10,16 @@ import React from "react";
 //==========================          ============================
 //Main function:
 function App() {
+  //------vars:
+  const [word, setWord] = useState(""); //Used to keep track of the current word generated
+
+  //---
   return (
-    <div className="App">
+    <div id="wrapper" className="App">
       <p>Hello world</p>
     </div>
   );
 }
-
 //==========================          ========================================
 //Exports:
 export default App;
