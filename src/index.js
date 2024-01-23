@@ -30,6 +30,7 @@ root.render(
     <h1 className="title" data-text={TITLE}>
       {TITLE}
     </h1>
+    <h2> Generate a random word </h2>
     <App />
   </React.StrictMode>
 );
