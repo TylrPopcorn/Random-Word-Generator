@@ -16,7 +16,10 @@ function App() {
   //---
   return (
     <div id="wrapper" className="App">
-      <p>Hello world</p>
+      <p>Hello world (APP)</p>
+      <div className="WordArea">
+        <p className="randomWord">{word}</p>
+      </div>
     </div>
   );
 }

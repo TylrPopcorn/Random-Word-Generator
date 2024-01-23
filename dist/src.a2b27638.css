@@ -147,6 +147,8 @@ html {
 /* [VARIABLES:] */
 :root {
   --main-text-color: rgb(235, 38, 81);
+  --text-stroke-color: rgb(235, 38, 81);
+  --text-highlight-color: rgb(255, 0, 0);
 }
 /* ---------- */
 /* ---------------- */
@@ -175,16 +177,62 @@ body {
 }
 
 /*-------------------------TITLE-------------------------*/
+@keyframes glowing {
+  /* Responsible for making the title glow up and down */
+  0% {
+    text-shadow: 0px 0px 15px var(--text-stroke-color);
+  }
+  50% {
+    text-shadow: 0px 0px 30px var(--text-stroke-color);
+  }
+  100% {
+    text-shadow: 0px 0px 15px var(--text-stroke-color);
+  }
+}
+
+@keyframes animate {
+  0% {
+    width: 0%;
+  }
+  10% {
+    width: 0%;
+  }
+  70%,
+  100% {
+    width: 100%;
+  }
+}
+
+#root .title::before {
+  /*CREDIT: https://www.youtube.com/watch?v=4PbgtyE0mGs */
+  content: attr(data-text);
+  position: absolute;
+  width: 0%;
+
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 0px 3px var(--text-highlight-color);
+
+  overflow: hidden;
+  white-space: nowrap;
+
+  animation: animate 8s linear forwards 2s;
+}
+
 #root .title {
   font-size: 60px;
   font-weight: bold;
   color: var(--main-text-color);
-  -webkit-text-stroke: 0.4px #000000;
+  -webkit-text-stroke: 0.8px #000000;
 
   animation: glowing 8s infinite; /* Adjust the duration as needed */
 
   margin-top: 3%;
   z-index: 2;
+}
+
+#root h2 {
+  color: var(--main-text-color);
+  margin-top: 10px;
 }
 /*--*/
 
