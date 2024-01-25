@@ -146,9 +146,11 @@ html {
 
 /* [VARIABLES:] */
 :root {
-  --main-text-color: rgb(235, 38, 81);
+  --main-text-color: rgb(190, 3, 3);
   --text-stroke-color: rgb(235, 38, 81);
   --text-highlight-color: rgb(255, 0, 0);
+
+  --width-s: 100%;
 }
 /* ---------- */
 /* ---------------- */
@@ -209,7 +211,7 @@ body {
   position: absolute;
   width: 0%;
 
-  color: rgb(255, 255, 255);
+  color: var(--text-highlight-color);
   text-shadow: 0px 0px 3px var(--text-highlight-color);
 
   overflow: hidden;
@@ -222,7 +224,7 @@ body {
   font-size: 60px;
   font-weight: bold;
   color: var(--main-text-color);
-  -webkit-text-stroke: 0.8px #000000;
+  -webkit-text-stroke: 0.3px #000000;
 
   animation: glowing 8s infinite; /* Adjust the duration as needed */
 
@@ -235,6 +237,23 @@ body {
   margin-top: 10px;
 }
 /*--*/
+
+/*-------------------------APP-------------------------*/
+
+/*-------------------------GENERATE BUTTON-------------------------*/
+.ButtonHolder {
+  margin-top: 5%;
+  border-radius: 20px;
+
+  background-color: red;
+
+  height: 8vh;
+  width: var(--width-s);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 /*# sourceMappingURL=/src.a2b27638.css.map */
