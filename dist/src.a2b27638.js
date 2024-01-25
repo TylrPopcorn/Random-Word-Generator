@@ -28946,6 +28946,13 @@ function App() {
   //------vars:
   const [word, setWord] = (0, _react.useState)(""); //Used to keep track of the current word generated
 
+  //--------------------------------
+  //Functions:
+  const generateWord = () => {
+    //This function will generate a radnom word to be shown on the screen.
+    console.log("Generated.");
+  };
+  //--
   //---
   return /*#__PURE__*/_react.default.createElement("div", {
     id: "wrapper",
@@ -28954,7 +28961,14 @@ function App() {
     className: "WordArea"
   }, /*#__PURE__*/_react.default.createElement("p", {
     className: "randomWord"
-  }, word)));
+  }, word)), /*#__PURE__*/_react.default.createElement("div", {
+    className: "ButtonHolder"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "GenerateButton",
+    onClick: generateWord
+  }, "Generate")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "BottomFrame"
+  }, /*#__PURE__*/_react.default.createElement("p", null, "Click the button above to generate a random number")));
 }
 //==========================          ========================================
 //Exports:
