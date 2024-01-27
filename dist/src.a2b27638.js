@@ -28959,9 +28959,11 @@ function App() {
     className: "App"
   }, /*#__PURE__*/_react.default.createElement("p", null, "Hello world (APP)"), /*#__PURE__*/_react.default.createElement("div", {
     className: "WordArea"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "WordHolder"
   }, /*#__PURE__*/_react.default.createElement("p", {
     className: "randomWord"
-  }, word)), /*#__PURE__*/_react.default.createElement("div", {
+  }, word))), /*#__PURE__*/_react.default.createElement("div", {
     className: "ButtonHolder"
   }, /*#__PURE__*/_react.default.createElement("button", {
     className: "GenerateButton",
@@ -29033,7 +29035,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61614" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53110" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
