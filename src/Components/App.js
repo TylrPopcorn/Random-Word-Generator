@@ -25,7 +25,9 @@ function App() {
     <div id="wrapper" className="App">
       <p>Hello world (APP)</p>
       <div className="WordArea">
-        <p className="randomWord">{word}</p>
+        <div className="WordHolder">
+          <p className="randomWord">{word}</p>
+        </div>
       </div>
       <div className="ButtonHolder">
         <button className="GenerateButton" onClick={generateWord}>
