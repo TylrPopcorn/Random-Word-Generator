@@ -28960,10 +28960,12 @@ function App() {
   }, /*#__PURE__*/_react.default.createElement("p", null, "Hello world (APP)"), /*#__PURE__*/_react.default.createElement("div", {
     className: "WordArea"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "WordHolder"
+    className: "WordHolder_outside"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "WordHolder_middle"
   }, /*#__PURE__*/_react.default.createElement("p", {
     className: "randomWord"
-  }, word))), /*#__PURE__*/_react.default.createElement("div", {
+  }, word)))), /*#__PURE__*/_react.default.createElement("div", {
     className: "ButtonHolder"
   }, /*#__PURE__*/_react.default.createElement("button", {
     className: "GenerateButton",
@@ -29035,7 +29037,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53110" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64108" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
