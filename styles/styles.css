@@ -1,8 +1,9 @@
 /* [VARIABLES:] */
 :root {
-  --main-text-color: rgb(189, 2, 2);
-  --text-stroke-color: rgb(255, 0, 0);
-  --text-highlight-color: rgb(255, 0, 0);
+  --main-text-color: rgb(46, 189, 2);
+  --text-stroke-color: rgb(43, 255, 0);
+  --text-highlight-color: rgb(72, 255, 0);
+  --text-stroke-shadow: rgb(10, 63, 0);
 
   --width-s: 50%;
 }
@@ -71,7 +72,7 @@ body {
   overflow: hidden;
   white-space: nowrap;
 
-  animation: animate 8s ease-in-out 2s forwards;
+  animation: animate 5s ease-in-out 2s forwards;
 }
 
 #root .title {
@@ -124,11 +125,10 @@ body {
   border-radius: 10%;
   border: 2px solid var(--main-text-color);
   box-shadow: 0px 0px 4.5vh var(--main-text-color),
-    inset 0px 0px 3vh var(--main-text-color);
+    inset 0px 0px 4vh var(--main-text-color);
 
   height: 40%;
   width: 80%;
-  /* background-color: yellow; */
 
   display: flex;
   justify-content: center;
@@ -139,23 +139,46 @@ body {
   border-radius: 9.5%;
   border: 2px solid var(--main-text-color);
   box-shadow: 0px 0px 2vh var(--main-text-color), inset 0px 0px 3vh rgb(0, 0, 0);
-
+  background-color: var(--text-stroke-shadow);
   height: 85%;
   width: 98%;
-
-  opacity: 1;
-}
-/*-------------------------GENERATE BUTTON-------------------------*/
-.ButtonHolder {
-  margin-top: 5%;
-  border-radius: 20px;
-
-  background-color: rgb(70, 10, 10);
-
-  height: 8vh;
-  width: 70%;
 
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/*-------------------------GENERATE BUTTON-------------------------*/
+.ButtonHolder {
+  border-radius: 10px;
+
+  /* background-color: black; */
+
+  height: 7vh;
+  width: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.GenerateButton {
+  height: 70%;
+  width: 80%;
+
+  font-size: 1em;
+  border-radius: 5px;
+
+  box-shadow: 0 0 0 var(--main-text-color);
+  transition: box-shadow 0.06s ease; /* Add a transition for box-shadow */
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 2;
+}
+
+.GenerateButton:hover {
+  box-shadow: 0 0 10px var(--main-text-color), 0 0 20px var(--main-text-color),
+    0 0 50px var(--main-text-color), 0 0 100px var(--main-text-color);
 }

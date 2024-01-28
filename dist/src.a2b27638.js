@@ -28944,7 +28944,7 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
 //Main function:
 function App() {
   //------vars:
-  const [word, setWord] = (0, _react.useState)(""); //Used to keep track of the current word generated
+  const [word, setWord] = (0, _react.useState)("Loading..."); //Used to keep track of the current word generated
 
   //--------------------------------
   //Functions:
@@ -28957,7 +28957,7 @@ function App() {
   return /*#__PURE__*/_react.default.createElement("div", {
     id: "wrapper",
     className: "App"
-  }, /*#__PURE__*/_react.default.createElement("p", null, "Hello world (APP)"), /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: "WordArea"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "WordHolder_outside"
