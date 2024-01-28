@@ -11,7 +11,7 @@ import React, { useState } from "react";
 //Main function:
 function App() {
   //------vars:
-  const [word, setWord] = useState(""); //Used to keep track of the current word generated
+  const [word, setWord] = useState("Loading..."); //Used to keep track of the current word generated
 
   //--------------------------------
   //Functions:
@@ -23,7 +23,6 @@ function App() {
   //---
   return (
     <div id="wrapper" className="App">
-      <p>Hello world (APP)</p>
       <div className="WordArea">
         <div className="WordHolder_outside">
           <div className="WordHolder_middle">
