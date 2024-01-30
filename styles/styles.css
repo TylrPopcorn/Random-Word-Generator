@@ -1,9 +1,9 @@
 /* [VARIABLES:] */
 :root {
-  --main-text-color: rgb(46, 189, 2);
-  --text-stroke-color: rgb(43, 255, 0);
-  --text-highlight-color: rgb(72, 255, 0);
-  --text-stroke-shadow: rgb(10, 63, 0);
+  --main-text-color: rgb(2, 120, 189);
+  --text-stroke-color: rgb(0, 204, 255);
+  --text-highlight-color: rgb(0, 204, 255);
+  --text-stroke-shadow: rgb(0, 50, 63);
 
   --width-s: 50%;
 }
@@ -109,7 +109,8 @@ body {
 }
 /*-------------------------- WORD SQUARE ---------------------------*/
 .WordArea {
-  margin-top: 5%;
+  margin-top: 10%;
+  margin-bottom: 5%;
   height: 15vw;
   width: 90%;
 
@@ -154,7 +155,7 @@ body {
 
   /* background-color: black; */
 
-  height: 7vh;
+  height: 6vh;
   width: 50%;
 
   display: flex;
@@ -167,7 +168,12 @@ body {
   width: 80%;
 
   font-size: 1em;
-  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+
+  border-radius: 2px;
+  background-color: #2f3030;
+  -webkit-text-stroke: 0.3px black;
 
   box-shadow: 0 0 0 var(--main-text-color);
   transition: box-shadow 0.06s ease; /* Add a transition for box-shadow */
@@ -181,4 +187,6 @@ body {
 .GenerateButton:hover {
   box-shadow: 0 0 10px var(--main-text-color), 0 0 20px var(--main-text-color),
     0 0 50px var(--main-text-color), 0 0 100px var(--main-text-color);
+  border: 1px solid var(--main-text-color);
+  color: var(--main-text-color);
 }
