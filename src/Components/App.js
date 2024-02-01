@@ -17,6 +17,9 @@ function App() {
   //Functions:
   const generateWord = () => {
     //This function will generate a radnom word to be shown on the screen.
+
+    //TODO: Invoke server so we can get a random word.
+
     console.log("Generated.");
   };
   //--
