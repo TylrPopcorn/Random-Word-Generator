@@ -150,6 +150,15 @@ body {
   align-items: center;
 }
 
+.randomWord {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.randomWord.fade {
+  opacity: 1;
+}
+
 /*-------------------------GENERATE BUTTON-------------------------*/
 .ButtonHolder {
   border-radius: 10px;
