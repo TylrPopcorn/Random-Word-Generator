@@ -28922,7 +28922,23 @@ module.hot.accept(reloadCSS);
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/Components/App.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/Components/wait.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// This function will wait for the specified time in milliseconds.
+function wait(time) {
+  return new Promise(function (resolve) {
+    setTimeout(function () {
+      resolve();
+    }, time);
+  });
+}
+// EXPORTS-------:
+exports.default = wait;
+},{}],"src/Components/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28930,15 +28946,17 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
+var _wait = _interopRequireDefault(require("./wait.ts"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function (e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
 //imports:
 
 //styles:
-// import '../../styles/styles.css';
+//--
+//--
 
 //(IMPORTED) functions:
-//--
 
 //==========================          ============================
 //Main function:
@@ -28948,12 +28966,29 @@ function App() {
 
   //--------------------------------
   //Functions:
+  let generateRunning = false; //Debounce
   const generateWord = () => {
     //This function will generate a radnom word to be shown on the screen.
+    const randomWordBox = document.querySelector(".randomWord");
+    const wordHolder = document.querySelector(".WordHolder_outside");
+    if (generateRunning === false) {
+      //IF the current function is NOT already running THEN,
+      generateRunning = true; //Turn on debouce
 
-    //TODO: Invoke server so we can get a random word.
+      //TODO: Invoke server so we can get a random word.
 
-    console.log("Generated.");
+      console.log("Generated."); //console response
+      randomWordBox.classList.add("fade");
+
+      // Wait a certain amount of time before ending function and removing effects:
+      (0, _wait.default)(1000).then(() => {
+        randomWordBox.classList.remove("fade");
+        (0, _wait.default)(1700).then(() => {
+          generateRunning = false;
+        });
+        //[NOTE]: By adding another wait at the end of this wait, we can give the function a little bit of time at the end to sit beofre running the function again.
+      });
+    }
   };
   //--
   //---
@@ -28980,7 +29015,7 @@ function App() {
 //==========================          ========================================
 //Exports:
 var _default = exports.default = App;
-},{"react":"node_modules/react/index.js"}],"src/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./wait.ts":"src/Components/wait.ts"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -29040,7 +29075,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56529" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54089" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
