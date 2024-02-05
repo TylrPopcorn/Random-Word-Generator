@@ -30,12 +30,14 @@ function App() {
 
       console.log("Generated."); //console response
       randomWordBox.classList.add("fade");
+      wordHolder.classList.add("shine");
 
       // Wait a certain amount of time before ending function and removing effects:
-      wait(1000).then(() => {
+      wait(2000).then(() => {
         randomWordBox.classList.remove("fade");
+        wordHolder.classList.remove("shine");
 
-        wait(1700).then(() => {
+        wait(1000).then(() => {
           generateRunning = false;
         });
         //[NOTE]: By adding another wait at the end of this wait, we can give the function a little bit of time at the end to sit beofre running the function again.

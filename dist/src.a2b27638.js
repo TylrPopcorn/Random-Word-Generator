@@ -28979,11 +28979,13 @@ function App() {
 
       console.log("Generated."); //console response
       randomWordBox.classList.add("fade");
+      wordHolder.classList.add("shine");
 
       // Wait a certain amount of time before ending function and removing effects:
-      (0, _wait.default)(1000).then(() => {
+      (0, _wait.default)(2000).then(() => {
         randomWordBox.classList.remove("fade");
-        (0, _wait.default)(1700).then(() => {
+        wordHolder.classList.remove("shine");
+        (0, _wait.default)(1000).then(() => {
           generateRunning = false;
         });
         //[NOTE]: By adding another wait at the end of this wait, we can give the function a little bit of time at the end to sit beofre running the function again.
@@ -29075,7 +29077,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54089" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60807" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
