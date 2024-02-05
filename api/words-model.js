@@ -5,7 +5,7 @@ const axios = require("axios");
 
 //FUNCTIONS:
 //----------
-const Functions = {};
+const Functions = {}; //ALL functions located under one folder/table.
 
 //-----------------         ------------------\\
 
