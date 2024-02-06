@@ -1,5 +1,6 @@
 //imports:
 import React, { useState } from "react";
+import axios from "axios";
 
 //styles:
 //--
@@ -27,6 +28,17 @@ function App() {
       generateRunning = true; //Turn on debouce
 
       //TODO: Invoke server so we can get a random word.
+      async function fetchData() {
+        try {
+          const response = await axios.get("https://localhost:3000/");
+          console.log(response.data); // Use the data as needed
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      }
+
+      // Call the async function
+      fetchData();
 
       console.log("Generated."); //console response
       randomWordBox.classList.add("fade");
@@ -61,7 +73,7 @@ function App() {
         </button>
       </div>
       <div className="BottomFrame">
-        <p>Click the button above to generate a random number</p>
+        <p>Click the button above to generate a random word</p>
       </div>
     </div>
   );

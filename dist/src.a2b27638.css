@@ -355,5 +355,14 @@ body {
   color: var(--main-text-color);
 }
 
+/*-------------------------BOTTOM FRAME-------------------------*/
+.BottomFrame {
+  position: relative;
+  margin-top: 0.5em;
+  color: var(--main-text-color);
+  font-weight: normal;
+  font-style: italic;
+}
+
 
 /*# sourceMappingURL=/src.a2b27638.css.map */

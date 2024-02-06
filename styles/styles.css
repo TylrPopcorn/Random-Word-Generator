@@ -208,3 +208,12 @@ body {
   border: 1px solid var(--main-text-color);
   color: var(--main-text-color);
 }
+
+/*-------------------------BOTTOM FRAME-------------------------*/
+.BottomFrame {
+  position: relative;
+  margin-top: 0.5em;
+  color: var(--main-text-color);
+  font-weight: normal;
+  font-style: italic;
+}
