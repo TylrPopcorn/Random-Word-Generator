@@ -33,6 +33,8 @@ server.use(cors()); //enable cross-origin requests
 //--------------------------------
 server.get("/", (req, res) => {
   //base endpoint.
+  // res.setHeader("Access-Control-Allow-Origin", "http://localhost:1234"); // Enable CORS for this route
+
   Words.getNewWord()
     .then((word) => {
       //SUCCESSFULLY RETRIEVED A WORD
