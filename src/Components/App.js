@@ -11,13 +11,13 @@ import wait from "./wait.ts";
 
 //==========================          ============================
 //Main function:
+let generateRunning = false; //Debounce for generating words
 function App() {
   //------vars:
   const [word, setWord] = useState("Loading..."); //Used to keep track of the current word generated
 
-  //--------------------------------
+  //--------------------------------                  --------------------------------
   //Functions:
-  let generateRunning = false; //Debounce
   const generateWord = () => {
     //This function will generate a radnom word to be shown on the screen.
     const randomWordBox = document.querySelector(".randomWord");
@@ -27,37 +27,43 @@ function App() {
       //IF the current function is NOT already running THEN,
       generateRunning = true; //Turn on debouce
 
-      //TODO: Invoke server so we can get a random word.
+      //Invoke server so we can get a random word.
       async function fetchData() {
         try {
-          const response = await axios.get("https://localhost:3000/");
-          console.log(response.data); // Use the data as needed
+          const response = await axios.get("http://localhost:3000/");
+          const Word = response.data; //the random word generated.
+          console.log("Generated."); //console response
+
+          return Word;
         } catch (error) {
-          console.error("Error fetching data:", error);
+          console.error("Error fetching data:", error.message);
+          return error.message;
         }
       }
 
       // Call the async function
-      fetchData();
+      fetchData().then((res) => {
+        setWord(res); //Set word to the newely generated word.
 
-      console.log("Generated."); //console response
-      randomWordBox.classList.add("fade");
-      wordHolder.classList.add("shine");
+        randomWordBox.classList.add("fade");
+        wordHolder.classList.add("shine");
 
-      // Wait a certain amount of time before ending function and removing effects:
-      wait(2000).then(() => {
-        randomWordBox.classList.remove("fade");
-        wordHolder.classList.remove("shine");
+        // Wait a certain amount of time before ending function and removing effects:
+        wait(1800).then(() => {
+          randomWordBox.classList.remove("fade");
+          wordHolder.classList.remove("shine");
 
-        wait(1000).then(() => {
-          generateRunning = false;
+          wait(600).then(() => {
+            generateRunning = false;
+          });
+          //[NOTE]: By adding another wait at the end of this wait, we can give the function a little bit of time at the end to sit beofre running the function again.
         });
-        //[NOTE]: By adding another wait at the end of this wait, we can give the function a little bit of time at the end to sit beofre running the function again.
       });
     }
   };
+  //--------------------------------                      --------------------------------
   //--
-  //---
+  //---HTML
   return (
     <div id="wrapper" className="App">
       <div className="WordArea">

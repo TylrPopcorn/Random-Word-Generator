@@ -34276,13 +34276,13 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
 
 //==========================          ============================
 //Main function:
+let generateRunning = false; //Debounce for generating words
 function App() {
   //------vars:
   const [word, setWord] = (0, _react.useState)("Loading..."); //Used to keep track of the current word generated
 
-  //--------------------------------
+  //--------------------------------                  --------------------------------
   //Functions:
-  let generateRunning = false; //Debounce
   const generateWord = () => {
     //This function will generate a radnom word to be shown on the screen.
     const randomWordBox = document.querySelector(".randomWord");
@@ -34291,29 +34291,42 @@ function App() {
       //IF the current function is NOT already running THEN,
       generateRunning = true; //Turn on debouce
 
-      //TODO: Invoke server so we can get a random word.
-      const word = _axios.default.get("https://localhost:3000/").then(res => {
-        console.log(res);
-      }).catch(err => {
-        console.log(err);
-      });
-      console.log("Generated."); //console response
-      randomWordBox.classList.add("fade");
-      wordHolder.classList.add("shine");
+      //Invoke server so we can get a random word.
+      async function fetchData() {
+        try {
+          const response = await _axios.default.get("http://localhost:3000/");
+          const Word = response.data; //the random word generated.
+          console.log("Generated."); //console response
 
-      // Wait a certain amount of time before ending function and removing effects:
-      (0, _wait.default)(2000).then(() => {
-        randomWordBox.classList.remove("fade");
-        wordHolder.classList.remove("shine");
-        (0, _wait.default)(1000).then(() => {
-          generateRunning = false;
+          return Word;
+        } catch (error) {
+          console.error("Error fetching data:", error.message);
+          return error.message;
+        }
+      }
+
+      // Call the async function
+      fetchData().then(res => {
+        setWord(res); //Set word to the newely generated word.
+
+        randomWordBox.classList.add("fade");
+        wordHolder.classList.add("shine");
+
+        // Wait a certain amount of time before ending function and removing effects:
+        (0, _wait.default)(1800).then(() => {
+          randomWordBox.classList.remove("fade");
+          wordHolder.classList.remove("shine");
+          (0, _wait.default)(600).then(() => {
+            generateRunning = false;
+          });
+          //[NOTE]: By adding another wait at the end of this wait, we can give the function a little bit of time at the end to sit beofre running the function again.
         });
-        //[NOTE]: By adding another wait at the end of this wait, we can give the function a little bit of time at the end to sit beofre running the function again.
       });
     }
   };
+  //--------------------------------                      --------------------------------
   //--
-  //---
+  //---HTML
   return /*#__PURE__*/_react.default.createElement("div", {
     id: "wrapper",
     className: "App"
@@ -34397,7 +34410,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60807" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55126" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
