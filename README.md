@@ -32,3 +32,7 @@ https://github.com/TylrPopcorn/Random-Word-Generator/assets/104395322/4d8cfc01-d
 <sup>Credit goes to the original/external sources used.</sup>
 <br>
 <sup>External API: https://random-word-api.herokuapp.com/home</sup>
+
+
+# Related Projects
+-  [Random Number Generator](https://github.com/TylrPopcorn/Random-Number-Generator) - *Generate a random number*
