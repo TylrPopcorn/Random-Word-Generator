@@ -29,8 +29,6 @@ Click the 'Generate' button to generate a random word
 
 https://github.com/TylrPopcorn/Random-Word-Generator/assets/104395322/4d8cfc01-d5d8-470e-9dcc-e759dea0821c
 
-
-<br>
 <sup>Credit goes to the original/external sources used.</sup>
 <br>
 <sup>External API: https://random-word-api.herokuapp.com/home</sup>
