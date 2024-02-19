@@ -48,6 +48,7 @@ body {
 }
 
 @keyframes animate {
+  /*Responsible for changing the tite*/
   0% {
     width: 0%;
   }
@@ -172,7 +173,7 @@ body {
   border-radius: 10px;
 
   /* background-color: black; */
-
+  
   height: 6vh;
   width: 50%;
 
