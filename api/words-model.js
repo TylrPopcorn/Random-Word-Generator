@@ -22,3 +22,5 @@ Functions.getNewWord = async function () {
 //EXPORTS:
 //-----------------------------
 module.exports = Functions;
+
+
