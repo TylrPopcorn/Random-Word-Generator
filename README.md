@@ -1,7 +1,7 @@
 #    ```Random-Word-Generator```
  ``` A simple application that will generate a random word from an external API. ```
 ##   Overview
-<sup>*Developed using **HTML, React, JavaScript, CSS, Node, and TypeScript***</sup>
+<sup>*Developed using **HTML, React.js, JavaScript, CSS, Node.js, and TypeScript***</sup>
 
 Employed HTML, React, JavaScript, Typescript, CSS, and Node.js to craft a user-centric application for generating random words from an external API source. HTML provided the foundational structure of the application, defining its layout and components. Leveraging React, a JavaScript library, facilitated the creation of dynamic and interactive features, enabling seamless updates to the user interface based on user interactions. Along with TypeScript for enhanced type safety, JavaScript played a pivotal role in managing the logic behind generating random words and dynamically updating the display. Node was utilized to communicate with an external API, retrieving random words for the project. CSS was instrumental in refining the application's aesthetics, ensuring an appealing and responsive user experience. Continuing, The codebase was meticulously commented, enabling other developers to easily comprehend and contribute to the project. By seamlessly integrating these technologies, I successfully developed a functional and visually engaging random word generator, further enhancing my proficiency in web development.
 
